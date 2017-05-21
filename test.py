@@ -12,7 +12,7 @@ from microsofttranslator import Translator, TranslateApiException
 client_id = os.environ['CLIENT_ID']
 client_secret = os.environ['CLIENT_SECRET']
 
-default_languages = [u'en', u'fr', u'de']
+default_languages = ['en', 'fr', 'de']
 
 
 class TestTranslator(unittest.TestCase):
@@ -20,12 +20,12 @@ class TestTranslator(unittest.TestCase):
     def test_translate(self):
         client = Translator(client_id, client_secret, debug=True)
         self.assertEqual(
-            client.translate("hello", "pt"), u'Ol\xe1'
+            client.translate("hello", "pt"), 'Ol\xe1'
         )
 
     def test_translate_array(self):
         client = Translator(client_id, client_secret, debug=True)
-        self.assertEqual(client.translate("hello", "pt"), u'Ol\xe1')
+        self.assertEqual(client.translate("hello", "pt"), 'Ol\xe1')
 
     def test_invalid_client_id(self):
         client = Translator("foo", "bar")
@@ -40,7 +40,7 @@ class TestTranslator(unittest.TestCase):
 
     def test_detect_language(self):
         client = Translator(client_id, client_secret, debug=True)
-        self.assertEqual(client.detect_language('hello'), u'en')
+        self.assertEqual(client.detect_language('hello'), 'en')
 
 
 def test_all():
